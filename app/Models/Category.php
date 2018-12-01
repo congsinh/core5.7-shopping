@@ -3,10 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Str;
 class Category extends Model
 {
     protected $fillable = ['name','slug','parent_id','meta_title', 'meta_description'];
+    public function setNameAttribute($name)
+    {
+        $this->attributes['name'] = $name;
+        $this->attributes['slug'] = Str::slug($name);
+    }
 
     public function productsByParent(){
         return $this->hasManyThrough('App\Models\Product','App\Models\Category','parent_id','category_id','id','id');

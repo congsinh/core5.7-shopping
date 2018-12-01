@@ -1,3 +1,5 @@
+
+
 (function ($, window, document, undefined) {
     var daterangepickerInit = {
         init: function(){

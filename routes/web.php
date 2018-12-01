@@ -17,6 +17,7 @@ Route::group(['domain' => 'admin.' . config('app.domain')], function () {
     Route::group(['middleware' => 'check_admin'], function () {
         Route::group(['namespace' => 'Admin'], function (){
             Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+            Route::resource('category', 'CategoryController');
         });
         Route::get('logout', 'Auth\LoginController@logout')->name('logout');
     });

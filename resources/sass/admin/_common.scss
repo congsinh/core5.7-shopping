@@ -1,0 +1,12 @@
+.btn {
+    color: inherit;
+    font-family: Nunito;
+    &:disabled{
+        background-color: #c4c5d6 !important;
+        border-color: #c4c5d6 !important;
+        color: #fff !important;
+    }
+}
+.hidden {
+    display: none !important;
+}
